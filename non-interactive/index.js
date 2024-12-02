@@ -32,8 +32,8 @@ module.exports = async function (context, eventHubMessages) {
             password: process.env.AUTH_PASSWORD
         };        
         const org_url = `${api_endpoint}${org}`;
-        const log_stream_prefix = 'microsoft_org_audit_logs';
-        const metric_stream_name = 'microsoft_org_audit_metrics';
+        const log_stream_prefix = 'microsoft_org_noninteractive_logs';
+        const metric_stream_name = 'microsoft_org_noninteractive_metrics';
         const metric_url = `${org_url}/${metric_stream_name}/_json`;
 
         // Process each Event Hub message
@@ -125,7 +125,7 @@ async function send_data(context, url, records, auth) {
         Authorization: `Basic ${encodedCredentials}`,
         "Content-Type": "application/json"
     };
-
+    
     context.log(`Sending headers: ${JSON.stringify(headers)}`);
 
     for (let attempt = 1; attempt <= maxRetries; attempt++) {

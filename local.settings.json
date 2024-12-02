@@ -1,0 +1,6 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "o2eventhub_RootManageSharedAccessKey_EVENTHUB": "Endpoint=sb://<EVENTHUB_NAMESPACE>.servicebus.windows.net/;SharedAccessKeyName=<SHARED_ACCESS_KEY_NAME>;SharedAccessKey=<SHARED_ACCESS_KEY>;EntityPath=<ENTITY_PATH>"
+  }
+}
